@@ -1,0 +1,268 @@
+@import url('reset.css');
+@import url('font.css');
+
+
+/* ==========================================================================
+   VARIABLES & MIXINS; COLOURS - VLT KL Christmas Greeting Card
+   ========================================================================== */
+.test-border {
+	border: 1px solid turquoise;
+}
+
+/* ==========================================================================
+   GENERAL STRUCTURE: GLOBAL - STYLES
+   ========================================================================== */
+html, body {
+    height: 100%;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.main-wrapper {
+  font-size: 100%;
+}
+
+.main-wrapper {
+    position:relative;
+    min-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+ul li a,
+.main-logo a,
+.btn-join a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   GENERAL STRUCTURE: TYPOGRAPHY - STYLES
+   ========================================================================== */
+h1 {
+    font-family: 'Arial';
+}
+
+p, a {
+    font-size: 1.5em;
+}
+
+/* ==========================================================================
+   HEADER STYLES
+   ========================================================================== */
+.header-wrapper {
+    position: relative;
+}
+
+.main-logo {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    @extend .test-border;
+}
+
+.social-bar-top {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    li {
+        width: 20px;
+        height: 20px;
+        @extend .test-border;
+    }
+}
+
+.social-bar-top li,
+.upload-option-box li {
+    display: inline-block;
+    @extend .test-border;
+}
+
+/* ==========================================================================
+   Dino Box - STYLES
+   ========================================================================== */
+.dino-wrapper,
+.header-wrapper,
+.upload-wrapper,
+.track-wrapper,
+.tq-wrapper {
+	max-width: 875px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	/*@extend .testborder;*/
+}
+
+.dino-wrapper {
+    padding-bottom: 60px;   /* Height of the footer */
+}
+
+.dino-audio-wrapper:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.dino-audio-wrapper {
+	display: inline-block;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.intro h1 {
+    font-size: 3.2em;
+    line-height: 2.5em;
+}
+
+.btn-join,
+.dino-audio-box {
+    float: left;
+    width: 175px;
+    height: 175px;
+}
+
+.btn-join {
+    @extend .test-border;
+}
+
+.dino-audio-box {
+	background-image: url('img/bear-link.jpg');
+	background-size: cover;
+	cursor: pointer;
+    
+    a {
+        display: block;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /*background-color: #F90;*/
+        /*@extend .test-border;*/
+    }
+    
+    a {
+        display: block;
+    }
+}
+
+.dino-audio-box:hover {
+	background-image: url('img/bear-hover.jpg');
+	background-size: cover;
+	transition: all .5s linear 0s;
+}
+
+.dino-audio-box.hover {
+    background-image: url('img/bear-hover.jpg');
+    background-size: cover;
+    transition: all .5s linear 0s;
+}
+
+.changeBG {
+	background-image: url('img/bear-click.gif');
+}
+
+/* ==========================================================================
+   UPLOAD PAGE - STYLES
+   ========================================================================== */
+.progress-bar {
+    display: inline-block;
+    @extend .test-border;
+    width: 500px;
+    height: 40px;
+}
+
+.upload-option-box {
+    li {
+        width: 200px;
+        height: 200px;
+        margin: 0 10px;
+    }
+}
+
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+.footer-wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;   /* Height of the footer */
+    text-align: center;
+}
+
+.btn-go-top {
+    position: fixed;
+    bottom: 6em;
+    right: 2em;   
+    background-color: red;
+    display: none;
+
+    a {
+        display: block;
+        /*width: 100%;
+        height: 100%;*/
+        padding: 1em;
+        color: white;
+        font-size: 12px;
+        text-decoration: none;
+    }
+}
+
+.btn-go-top:hover {
+    background-color: salmon;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .dino-wrapper,
+    .header-wrapper {
+        width: 525px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .dino-wrapper,
+    .header-wrapper {
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 875px) {
+    .dino-wrapper,
+    .header-wrapper {
+        width: 875px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    
+}
+
+@media only screen and (max-width: 480px) {
+    .dino-wrapper,
+    .header-wrapper {
+        width: 300px;
+    }
+    
+    .btn-join,
+    .dino-audio-box {
+        width: 50%;
+        height: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    .header-wrapper {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
