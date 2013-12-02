@@ -16,14 +16,14 @@
 -->
 	<div class="main-wrapper">
 		<div class="header-wrapper">
-			<div class="main-logo">
-				<a href="index.php">
-					Logo
-				</a>
-			</div><!--.main-logo-->
+			<div class="header-content">
+				<div class="main-logo">
+					<a href="index.php"></a>
+				</div><!--.main-logo-->
 
-			<ul class="social-bar-top">
-				<li class="social-fb"><a href="javascript:void(0);">F</a></li>
-				<li class="social-twitter"><a href="javascript:void(0);">T</a></li>
-			</ul>
+				<ul class="social-bar-top">
+					<li class="social-fb"><a href="javascript:void(0);"></a></li>
+					<li class="social-twitter"><a href="javascript:void(0);"></a></li>
+				</ul>
+			</div><!--.header-content-->
 		</div><!--.header-wrapper-->

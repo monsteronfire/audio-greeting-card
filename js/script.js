@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
 	//Scroll To Top button
-	var goUp = $('.btn-go-top');
+	var goUp = $('#btn-go-top');
 
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 150){
@@ -24,9 +24,37 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop:0}, 1000);
 	});
 
+	//Refresh Button
+	var btnfresh = $('#btn-refresh');
+
+	$(btnfresh).click(function(){
+		location.reload();
+	});
+
+	//Cancel Button
+	var btncancel = $('#btn-cancel');
+	$(btncancel).click(function(){
+		parent.history.back();
+		return false;
+	});
+
+	//Radio Buttons
+	var radiobtn = $('.red-tune');
+
+	$(radiobtn).change(function(){
+		alert('ok');
+	});
+
 });//end .ready();
 
-//
+//Custom Scrollbar
+$(function() {
+	$('.scroll-pane').jScrollPane();
+});
+
+
+
+//Audio Clips
 var audio = document.getElementById('background_audio');
 
 document.getElementById('mute').addEventListener('click', function (e)

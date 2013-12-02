@@ -1,5 +1,6 @@
 @import url('reset.css');
 @import url('font.css');
+@import url('jscrollpane.css');
 
 
 /* ==========================================================================
@@ -9,6 +10,25 @@
 	border: 1px solid turquoise;
 }
 
+.fade-effect {
+    transition: all .5s linear 0s;
+}
+
+$red: #A8131F;
+$midred: #BD131F;
+$purered: #FF0000;
+$white: #FFFFFF;
+$black: #000000;
+
+$darkgrey: #323232;
+$lightgrey: #A3A2A2;
+$footergrey: #6C6C6C;
+
+$fontgrey: #7F7F7F;
+
+$refreshgrey: #d7d7d7;
+$refreshgreyhover: #b6b6b6;
+
 /* ==========================================================================
    GENERAL STRUCTURE: GLOBAL - STYLES
    ========================================================================== */
@@ -17,7 +37,8 @@ html, body {
 }
 
 body {
-  font-size: 62.5%;
+    background-color: #FFFFFF;
+    font-size: 62.5%;
 }
 
 .main-wrapper {
@@ -27,13 +48,12 @@ body {
 .main-wrapper {
     position:relative;
     min-height: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 ul li a,
 .main-logo a,
-.btn-join a {
+.btn-join a,
+.camera-option-box li a {
     display: block;
     width: 100%;
     height: 100%;
@@ -43,62 +63,99 @@ ul li a,
    GENERAL STRUCTURE: TYPOGRAPHY - STYLES
    ========================================================================== */
 h1 {
-    font-family: 'Arial';
+    font-family: 'os-bold';
+}
+
+h3, p, a {
+    font-family: 'os-regular';
+}
+
+h3 {
+    font-size: 2.4em;
+    line-height: 1.4em;
 }
 
 p, a {
     font-size: 1.5em;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* ==========================================================================
    HEADER STYLES
    ========================================================================== */
 .header-wrapper {
+    background: url('img/bg-header-main-tile.jpg') repeat-x center;
+}
+
+.header-content {
     position: relative;
+    height: 327px;
+    background-size: cover;
 }
 
 .main-logo {
     display: inline-block;
-    width: 100px;
-    height: 40px;
-    @extend .test-border;
+    width: 217px;
+    height: 216px;
+    margin-top: 50px;
+    background: url('img/sprite.png') no-repeat -251px -182px;
 }
 
 .social-bar-top {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 100px;
 
     li {
-        width: 20px;
-        height: 20px;
-        @extend .test-border;
+        width: 40px;
+        height: 40px;
     }
 }
 
 .social-bar-top li,
-.upload-option-box li {
+.upload-option-box li,
+.camera-option-box li {
     display: inline-block;
-    @extend .test-border;
+}
+
+.social-bar-top .social-fb {
+    background: url('img/sprite.png') no-repeat 0px 0px;
+    margin-right: 10px;
+}
+
+.social-bar-top .social-twitter {
+    background: url('img/sprite.png') no-repeat -40px 0px;
 }
 
 /* ==========================================================================
-   Dino Box - STYLES
+   HOME - STYLES
    ========================================================================== */
-.dino-wrapper,
-.header-wrapper,
+.dino-wrapper {
+    max-width: 875px;
+}
+
+.wrapper,
+.header-content,
 .upload-wrapper,
 .track-wrapper,
 .tq-wrapper {
-	max-width: 875px;
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-	/*@extend .testborder;*/
+    max-width: 1024px;
 }
 
-.dino-wrapper {
-    padding-bottom: 60px;   /* Height of the footer */
+.wrapper,
+.dino-wrapper,
+.header-content,
+.upload-wrapper,
+.track-wrapper,
+.tq-wrapper {
+	width: 100%;
+	margin: 0 auto;
+    padding-bottom: 120px;   /* Height of the footer */
+	text-align: center;
+	/*@extend .testborder;*/
 }
 
 .dino-audio-wrapper:after {
@@ -112,12 +169,11 @@ p, a {
 .dino-audio-wrapper {
 	display: inline-block;
 	width: 100%;
-	margin-top: 10px;
 }
 
-.intro h1 {
-    font-size: 3.2em;
-    line-height: 2.5em;
+.intro h3 {
+    margin-top: 45px;
+    margin-bottom: 50px;
 }
 
 .btn-join,
@@ -128,7 +184,14 @@ p, a {
 }
 
 .btn-join {
-    @extend .test-border;
+    background: url('img/btn-join.jpg') no-repeat;
+    background-size: cover;
+    @extend .fade-effect;
+}
+
+.btn-join:hover {
+    background: url('img/btn-join-hover.jpg') no-repeat;
+    background-size: cover;
 }
 
 .dino-audio-box {
@@ -150,57 +213,31 @@ p, a {
     }
 }
 
-.dino-audio-box:hover {
+.dino-audio-box:hover,
+.dino-audio-box.hover {
 	background-image: url('img/bear-hover.jpg');
 	background-size: cover;
-	transition: all .5s linear 0s;
+	@extend .fade-effect;
 }
 
 .dino-audio-box.hover {
     background-image: url('img/bear-hover.jpg');
     background-size: cover;
-    transition: all .5s linear 0s;
+    @extend .fade-effect;
 }
 
 .changeBG {
 	background-image: url('img/bear-click.gif');
 }
 
-/* ==========================================================================
-   UPLOAD PAGE - STYLES
-   ========================================================================== */
-.progress-bar {
-    display: inline-block;
-    @extend .test-border;
-    width: 500px;
-    height: 40px;
-}
-
-.upload-option-box {
-    li {
-        width: 200px;
-        height: 200px;
-        margin: 0 10px;
-    }
-}
-
-/* ==========================================================================
-   FOOTER STYLES
-   ========================================================================== */
-.footer-wrapper {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 60px;   /* Height of the footer */
-    text-align: center;
-}
-
+/*BUTTONS*/
 .btn-go-top {
     position: fixed;
-    bottom: 6em;
-    right: 2em;   
-    background-color: red;
+    top: 750px;
+    right: 2em;
+    width: 43px;
+    height: 42px;
+    background: url('img/sprite.png') no-repeat -13px -100px;
     display: none;
 
     a {
@@ -215,7 +252,358 @@ p, a {
 }
 
 .btn-go-top:hover {
-    background-color: salmon;
+    background: url('img/sprite.png') no-repeat -63px -100px;
+}
+
+.btn-refresh {
+    position: fixed;
+    top:  700px;
+    right: 2em;
+    width: 43px;
+    height: 42px;
+    background: url('img/sprite.png') no-repeat -13px -53px;
+    cursor: pointer;
+}
+
+.btn-refresh:hover {
+    background: url('img/sprite.png') no-repeat -63px -53px;
+}
+
+/* ==========================================================================
+   PROGRESS BAR - STYLES
+   ========================================================================== */
+.progress-bar {
+    display: inline-block;
+    position: relative;
+    width: 520px;
+    margin-top: 45px;
+    /*@extend .test-border;*/
+}
+
+.step-box {
+    float: left;
+    width: 170px;
+
+    p {
+        color: $darkgrey;
+        font-size: 1.7em;
+        margin-bottom: 15px;
+    }
+
+    .indicator-circle {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: $lightgrey;
+        border: 1px solid transparent;
+        border-radius: 12px;
+    }
+}
+
+.bar-box {
+    position: absolute;
+    top: 35px;
+    left: 82px;
+    z-index: -1;
+}
+
+.indicator-bar {
+    float: left;
+    width: 170px;
+    height: 4px;
+    background-color: $lightgrey;
+}
+
+.bar-active {
+    background-color: $red;
+}
+
+.is-active {
+    p {
+        color: $red;
+    }
+
+    .indicator-circle {
+        background-color: $red;
+    }
+}
+
+/* ==========================================================================
+   UPLOAD PAGE - STYLES
+   ========================================================================== */
+.upload-option-box li {
+    width: 185px;
+    height: 185px;
+    margin: 0 10px;
+    background-color: $red;
+    border: 1px solid $red;
+    @extend .fade-effect;
+
+    a {
+        text-decoration: none;
+    }
+
+    a span {
+        display: inline-block;
+        background: url('img/sprite.png') no-repeat;
+        width: 72px;
+        height: 68px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    a p {
+        height: 65px;
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+
+    span.icon-take-photo {
+        background-position: -126px -15px;
+    }
+
+    span.icon-upload-photo {
+        width: 59px;
+        background-position: -222px -14px;
+    }
+
+    span.icon-general-photo {
+        width: 124px;
+        background-position: -302px -9px;
+    }
+
+    span.icon-share-fb {
+        width: 30px;
+        background-position:  -25px -168px;
+    }
+
+    span.icon-share-fb + p,
+    span.icon-tweet-this + p,
+    span.icon-back-home + p {
+        height: 90px;
+    }
+
+    span.icon-tweet-this {
+        width: 62px;
+        background-position:  -89px -177px;
+    }
+
+    span.icon-back-home {
+        width: 58px;
+        background-position:  -171px -174px
+    }
+
+    a p {
+        color: $white;
+        font-size: 1.1em;
+    }
+}
+
+.upload-option-box li:hover {
+    background-color: $white;
+
+    span.icon-take-photo {
+        background-position: -126px -95px;
+    }
+
+    span.icon-upload-photo {
+        background-position: -222px -94px;
+    }
+
+    span.icon-general-photo {
+        background-position: -302px -99px;
+    }
+
+    span.icon-share-fb {
+        background-position:  -25px -248px;
+    }
+
+    span.icon-tweet-this {
+        background-position:  -89px -257px;
+    }
+
+    span.icon-back-home {
+        background-position:  -171px -254px;
+    }
+
+    a p {
+        color: $red;
+    }
+}
+
+/* ==========================================================================
+   TAKE PHOTO - STYLES
+   ========================================================================== */
+.camera-frame {
+    display: inline-block;
+    width: 800px;
+    height: 500px;
+    margin-top: 45px;
+    background-color: $black;
+}
+
+.camera-option-box {
+    margin-top: 20px;
+}
+
+.camera-option-box li {
+    margin: 0 5px;
+}
+
+.red-button {
+    display: inline-block;
+    width: 155px;
+    height: 45px;
+    background: $red;
+    border: 1px solid $red;
+    @extend .fade-effect;
+
+    a {
+        color: $white;
+        line-height: 40px;
+        text-align: center;
+    }
+}
+
+.red-button:hover {
+    background: $white;
+
+    a {
+        color: $red;
+    }
+}
+
+/* ==========================================================================
+   CHOOSE TUNE STYLES
+   ========================================================================== */
+.tune-info {
+    width: 100%;
+}
+
+.inner-box {
+    display: inline-block;
+    width: 48%;
+}
+
+.photo-upload-box,
+.choose-tune-box {
+    text-align: left;
+}
+
+.photo-upload-box {
+    padding-left: 12%;
+    border-right: 1px solid $lightgrey;
+}
+
+.photo-upload-box p {
+    color: $purered;
+    font-family: 'os-light';
+    font-size: 1.3em;
+}
+
+.name-field {
+    width: 263px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: url('img/bg-text-input.png') no-repeat bottom left;
+    border: none;
+    color: $fontgrey;
+    font-family: 'os-regular';
+    font-size: 1.6em;
+}
+
+.choose-tune-box {
+    padding-left: 6%;
+    vertical-align: top;
+}
+
+.choose-tune-box h4 {
+    color: $midred;
+    font-family: 'os-regular';
+    font-size: 1.6em;
+}
+
+.tune-holder {
+    display: inline-block;
+    overflow: auto;
+    width: 350px;
+    height: 210px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+table, tr, td {
+    /*border: 1px solid $red;*/
+}
+
+td {
+    padding: 10px;
+}
+
+label {
+    width: 400px;
+    color: $fontgrey;
+    font-family: 'os-regular';
+    font-size: 1.4em;
+}
+
+.btn-toggle {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url('img/sprite.png') no-repeat;
+}
+
+.is-play {
+    background-position: -456px -15px;
+}
+
+.red-radio {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    /*background: url('img/sprite.png') no-repeat;*/
+    background-position: -453px -93px;
+}
+
+.is-click {
+    background-position: -453px -133px;
+}
+
+input[type="radio"] {
+    /*visibility: hidden;*/
+}
+
+.radio-tune {
+    border: 1px solid $red;
+}
+
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+.footer-wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 120px;   /* Height of the footer */
+    padding-top: 60px;
+    text-align: center;
+}
+
+.footer-wrapper p {
+    color: $footergrey;
+    font-size: 1.2em;
+
+    a {
+        color: $darkgrey;
+        font-size: 1.1em;
+    }
+
+    a:hover {
+        color: $red;
+    }
 }
 
 /* ==========================================================================
@@ -223,21 +611,188 @@ p, a {
    ========================================================================== */
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .dino-wrapper,
-    .header-wrapper {
+    .header-conent {
         width: 525px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .dino-wrapper,
-    .header-wrapper {
+    .header-conent {
         width: 700px;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .btn-refresh-box {
+        width: 100%;
+        margin-bottom: 40px;
+        background: $refreshgrey;
+    }
+
+    .btn-refresh-box:hover {
+        background: $refreshgreyhover;
+    }
+
+    .btn-refresh {
+        display: inline-block;
+        position: relative;
+        top:  0px;
+        left: 0px;
+        width: 241px;
+        height: 100px;
+        background: url('img/btn-refresh-mobile.jpg') no-repeat 0px 0px;
+        cursor: pointer;
+    }
+
+    .btn-refresh:hover {
+        background: url('img/btn-refresh-mobile.jpg') no-repeat 0px -100px;
+    }
+
+    .btn-go-top-box {
+        width: 100%;
+        background: $refreshgrey;
+    }
+
+    .btn-go-top-box:hover {
+        background: $refreshgreyhover;
+    }
+
+    .btn-go-top {
+        display: inline-block;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 241px;
+        height: 100px;
+        background: url('img/btn-to-top-mobile.jpg') no-repeat 0px 0px;
+    }
+
+    .btn-go-top:hover {
+        background: url('img/btn-to-top-mobile.jpg') no-repeat 0px -100px;
+    }
+
+    .upload-option-box li {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+
+        a span {
+            margin-top: 25px;
+            margin-bottom: 0px;
+        }
+
+        a p {
+            font-size: 1.6em;
+
+        }
+
+        span.icon-take-photo {
+            width: 57px;
+            height: 45px;
+            margin-right: 60px;
+            background-position: -91px -337px;
+        }
+
+        span.icon-upload-photo {
+            width: 47px;
+            height: 46px;
+            margin-right: 30px;
+            background-position: -18px -418px;
+        }
+
+        span.icon-general-photo {
+            width: 96px;
+            height: 53px;
+            background-position: -217px -414px;
+        }
+
+        span.icon-share-fb {
+            width: 30px;
+            background-position:  -25px -168px;
+        }
+
+        span.icon-tweet-this {
+            width: 62px;
+            background-position:  -89px -177px;
+        }
+
+        span.icon-back-home {
+            width: 58px;
+            background-position:  -171px -174px
+        }
+
+        span, p {
+            display: inline-block;
+        }
+    }
+
+    .upload-option-box li:hover {
+        background-color: $white;
+
+        span.icon-take-photo {
+            background-position: -13px -337px;
+        }
+
+        span.icon-upload-photo {
+            background-position: -177px -336px;
+        }
+
+        span.icon-general-photo {
+            background-position: -92px -414px;
+        }
+
+        span.icon-share-fb {
+            background-position:  -25px -248px;
+        }
+
+        span.icon-tweet-this {
+            background-position:  -89px -257px;
+        }
+
+        span.icon-back-home {
+            background-position:  -171px -254px;
+        }
+
+        a p {
+            color: $red;
+        }
+    }
+
+    .photo-upload-box,
+    .choose-tune-box {
+        text-align: center;
+    }
+
+    .photo-upload-box {
+        padding-left: 0px;
+        border-right: none;
+    }
+
+    .photo-upload-box p {
+        margin-right: 100px;
+    }
+
+    .choose-tune-box {
+        padding-left: 0px;
+        margin-top: 60px;
+    }
+
+    .inner-box {
+        width: 100%;
+    }
+
+    .tune-holder {
+        display: inline-block;
+        /*width: 80%;*/
+        height: auto;
+    }
+
+}
+
 @media screen and (min-width: 875px) {
     .dino-wrapper,
-    .header-wrapper {
+    .header-conent {
         width: 875px;
     }
 }
@@ -248,7 +803,7 @@ p, a {
 
 @media only screen and (max-width: 480px) {
     .dino-wrapper,
-    .header-wrapper {
+    .header-content {
         width: 300px;
     }
     
@@ -258,10 +813,50 @@ p, a {
         height: 150px;
     }
 
+    .progress-bar {
+        width: 100%;
+    }
+
+    .social-bar-top {
+        display: none;
+    }
+
+    .step-box {
+        width: 150px;
+    }
+
+    .step-box p {
+        font-size: 1.5em;
+    }
+
+    .indicator-bar {
+        width: 145px;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    .step-box {
+        width: 33%;
+    }
+
+    .step-box p {
+        height: 30px;
+    }
+
+    .bar-box {
+        top: 48px;
+        left: 17%;
+        width: 66%;
+    }
+
+    .indicator-bar {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 320px) {
-    .header-wrapper {
+    .header-conent {
         padding-right: 10px;
         padding-left: 10px;
     }
