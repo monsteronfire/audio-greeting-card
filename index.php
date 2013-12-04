@@ -3,9 +3,7 @@
 	<div class="dino-wrapper">
 		<div class="intro main-intro">		
 			<h3>
-				Let's parrrtay!<br />
-				Hit us up for some musical fun.<br />
-				And hey, make yourself at home by adding your photo.
+				At VLT, we love a collaboration.<br /><br />Join us this Christmas and make some noise!
 			</h3>
 		</div><!--.intro-->
 

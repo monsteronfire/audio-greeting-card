@@ -92,16 +92,16 @@ a {
 
 .header-content {
     position: relative;
-    height: 327px;
+    height: 252px;
     background-size: cover;
 }
 
 .main-logo {
     display: inline-block;
-    width: 217px;
-    height: 216px;
-    margin-top: 50px;
-    background: url('img/sprite.png') no-repeat -251px -182px;
+    width: 189px;
+    height: 188px;
+    margin-top: 30px;
+    background: url('img/sprite.png') no-repeat -251px -187px;
 }
 
 .social-bar-top {
@@ -436,8 +436,8 @@ a {
    ========================================================================== */
 .camera-frame {
     display: inline-block;
-    width: 800px;
-    height: 500px;
+    width: 620px;
+    height: 380px;
     margin-top: 45px;
     background-color: $black;
 }

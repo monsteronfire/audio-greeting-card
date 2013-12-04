@@ -40,14 +40,14 @@
 		</li>
 
 		<li>
-			<a href="#">
+			<a href="photo-upload.php">
 				<span class="icon icon-upload-photo"></span>
 				<p>Upload Photo</p>
 			</a>
 		</li>
 
 		<li>
-			<a href="#">
+			<a href="photo-general.php">
 				<span class="icon icon-general-photo"></span>
 				<p>Use General Photo</p>
 			</a>

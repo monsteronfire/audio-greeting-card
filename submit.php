@@ -1,5 +1,12 @@
 <?php include 'header.php';?>
 
+<?php
+include('conn.php');
+
+$sql = "update photos set txtname='".$_POST['txtname']."', audioTrack='".$_POST['audioTrack']."' where auto_id='".$_POST['photoID']."'";
+mysql_query($sql, $conn) or die(mysql_error());
+?>
+
 <div class="upload-wrapper">
 	<div class="progress-bar progress-1">
 		<div class="step-box is-active">
@@ -32,9 +39,9 @@
 
 	<ul class="upload-option-box">
 		<li>
-			<a href="photo-take.php">
-				<span class="icon icon-share-fb"></span>
-				<p>Share to Facebook</p>
+			<a href="index.php">
+				<span class="icon icon-back-home"></span>
+				<p>Back to Home</p>
 			</a>
 		</li>
 
@@ -46,9 +53,9 @@
 		</li>
 
 		<li>
-			<a href="index.php">
-				<span class="icon icon-back-home"></span>
-				<p>Back to Home</p>
+			<a href="photo-take.php">
+				<span class="icon icon-share-fb"></span>
+				<p>Share to Facebook</p>
 			</a>
 		</li>
 	</ul>
